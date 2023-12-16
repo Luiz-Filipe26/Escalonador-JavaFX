@@ -1,0 +1,1 @@
+Sistema para poder usar tipos diferentes de escalonamento de tarefas com interface gráfica.

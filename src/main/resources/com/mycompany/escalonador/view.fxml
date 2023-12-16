@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.escalonador.fxmlController.View">
+   <children>
+      <Canvas fx:id="canvasGrafico" height="280.0" layoutX="25.0" layoutY="31.0" width="492.0" />
+      <ComboBox fx:id="comboBoxTipoEscalonador" layoutX="25.0" layoutY="431.0" prefHeight="22.0" prefWidth="261.0" promptText="Roudin-Robin" />
+      <ComboBox fx:id="comboBoxTipoTarefa" layoutX="296.0" layoutY="431.0" prefHeight="25.0" prefWidth="160.0" promptText="Gerar String Aleatória" />
+      <TextField fx:id="textFieldNome" layoutX="24.0" layoutY="394.0" prefHeight="22.0" prefWidth="64.0" text="Nome" />
+      <TextField fx:id="textFieldIngresso" layoutX="102.0" layoutY="394.0" prefHeight="22.0" prefWidth="64.0" text="Ingresso" />
+      <TextField fx:id="textFieldDuracao" layoutX="178.0" layoutY="394.0" prefHeight="22.0" prefWidth="64.0" text="Duração" />
+      <TextField fx:id="textFieldPrioridade" layoutX="254.0" layoutY="394.0" prefHeight="22.0" prefWidth="69.0" text="Prioridade" />
+      <Button fx:id="buttonAdicionarProcesso" layoutX="338.0" layoutY="386.0" mnemonicParsing="false" onAction="#buttonAdicionarProcessoPressionado" prefHeight="33.0" prefWidth="253.0" text="Adicionar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonResetarGrafico" layoutX="24.0" layoutY="325.0" mnemonicParsing="false" onAction="#buttonResetarGrafico" prefHeight="41.0" prefWidth="140.0" text="RESETAR GRÁFICO">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonEscalonar" layoutX="195.0" layoutY="325.0" mnemonicParsing="false" onAction="#buttonEscalonarPressionado" prefHeight="41.0" prefWidth="128.0" text="Escalonar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonAdicionarProcessosDeArquivo" layoutX="338.0" layoutY="325.0" mnemonicParsing="false" onAction="#buttonAdicionarProcessosDeArquivoPressionado" prefHeight="33.0" prefWidth="253.0" text="ADICIONAR DE ARQUIVO">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonZoomOut" layoutX="520.0" layoutY="261.0" mnemonicParsing="false" onAction="#buttonZoomOutPressionado" prefHeight="50.0" prefWidth="50.0" text="-">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonZoomIn" layoutX="520.0" layoutY="208.0" mnemonicParsing="false" onAction="#buttonZoomInPressionado" prefHeight="50.0" prefWidth="50.0" text="+">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCima" layoutX="572.0" layoutY="51.0" mnemonicParsing="false" onAction="#buttonCimaPressionado" prefHeight="50.0" prefWidth="50.0" text="↑">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonBaixo" layoutX="572.0" layoutY="103.0" mnemonicParsing="false" onAction="#buttonBaixoPressionado" prefHeight="50.0" prefWidth="50.0" text="↓">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonEsquerda" layoutX="520.0" layoutY="103.0" mnemonicParsing="false" onAction="#buttonEsquerdaPressionado" prefHeight="50.0" prefWidth="50.0" text="←">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonDireita" layoutX="624.0" layoutY="103.0" mnemonicParsing="false" onAction="#buttonDireitaPressionado" prefHeight="50.0" prefWidth="50.0" text="→">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelMensagens" layoutX="25.0" layoutY="6.0" prefHeight="22.0" prefWidth="492.0" />
+      <Button fx:id="buttonDefinirEscalonamento" layoutX="477.0" layoutY="457.0" mnemonicParsing="false" onAction="#buttonDefinirEscalonamentoPressionado" prefHeight="33.0" prefWidth="80.0" text="DEFINIR">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="textFieldNumProcessadores" layoutX="24.0" layoutY="465.0" prefHeight="25.0" prefWidth="128.0" text="Nº de processadores" />
+      <TextField fx:id="textFieldUnidadeQuantum" layoutX="166.0" layoutY="465.0" prefHeight="22.0" prefWidth="140.0" text="Segundos por quantum" />
+      <TextField fx:id="textFieldQuantumPorProcesso" layoutX="319.0" layoutY="465.0" prefHeight="25.0" prefWidth="137.0" text="Quantum por processo" />
+      <ScrollPane fx:id="scrollPaneConsole" hbarPolicy="NEVER" layoutX="686.0" layoutY="34.0">
+         <content>
+            <TextArea fx:id="textAreaConsole" prefHeight="453.0" prefWidth="280.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
